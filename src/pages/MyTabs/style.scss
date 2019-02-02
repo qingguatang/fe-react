@@ -1,0 +1,22 @@
+.tabs {
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none; 
+  }
+
+  .navs {
+    display: flex;
+    li {
+      margin: 4px;
+      padding: 5px 10px;
+      border: 1px solid red;
+      cursor: pointer;
+    }
+  }
+
+  .pane {
+    padding: 10px;
+    border: 1px solid blue;
+  }
+}
