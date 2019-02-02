@@ -1,0 +1,11 @@
+body {
+  padding: 20px;
+}
+
+.items-panel {
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
