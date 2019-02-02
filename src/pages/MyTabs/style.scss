@@ -10,8 +10,10 @@
     li {
       margin: 4px;
       padding: 5px 10px;
-      border: 1px solid red;
       cursor: pointer;
+      &.active {
+        border: 1px solid red;
+      }
     }
   }
 

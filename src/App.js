@@ -6,7 +6,7 @@ import './App.scss';
 
 const App = () => (
   <Router>
-    <div>
+    <div className="app">
       <Route path="/updown" component={SortList} />
       <Route path="/tabs" component={MyTabs} />
     </div>
