@@ -15,11 +15,9 @@ function Button(props) {
   var size = ({
     'big': 'btn-lg',
     'small': 'btn-sm'
-  })[props.size];
+  })[props.size] || '';
 
-  if (size) {
-    cx += size;
-  }
+  cx += size;
 
   // if (props.size) {
   //   if (props.size === 'big') {
@@ -30,7 +28,7 @@ function Button(props) {
   // }
 
   return (
-    <button type="button" class={cx} onClick={props.onClick}>{props.children}</button>
+    <button type="button" className={cx} onClick={props.onClick}>{props.children}</button>
   );
 }
 

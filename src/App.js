@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FlipMove from 'react-flip-move';
 import Button from './components/Button';
+import shareImage from './images/share.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 
