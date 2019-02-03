@@ -9,6 +9,7 @@ class Markdown extends React.Component {
     this.state = {
       markdown: ''
     };
+    this.ref = React.createRef();
   }
 
   render() {
@@ -18,14 +19,14 @@ class Markdown extends React.Component {
     return (
       <div className="markdown">
         <div className="toolbar">
-          <IconButton icon="icon-editor-bold"></IconButton>
+          <IconButton icon="icon-editor-bold" onClick={() => this.onBold()}></IconButton>
           <IconButton icon="icon-editor-italic"></IconButton>
           <IconButton icon="icon-editor-underline"></IconButton>
           <IconButton icon="icon-editor-list-bulleted"></IconButton>
         </div>
         <div className="body box">
           <div className="editor">
-            <textarea className="textarea" value={markdown} onChange={e => this.onChange(e)} />
+            <textarea ref={this.ref} className="textarea" value={markdown} onChange={e => this.onChange(e)} />
           </div>
           <div className="preview" dangerouslySetInnerHTML={{__html: html}}>
           </div>
@@ -36,6 +37,24 @@ class Markdown extends React.Component {
 
   onChange(e) {
     this.setState({ markdown: e.target.value });
+  }
+
+  onBold() {
+    var el = this.ref.current;
+    var start = el.selectionStart;
+    var end = el.selectionEnd;
+    var text = this.state.markdown.substring(start, end);
+
+    // el.setRangeText('**' + text + '**');
+    // el.setRangeText(`**${text}**`);
+    // var event = new Event('change', { bubbles: true });
+    // el.dispatchEvent(event);
+
+    // 真理的单源性
+    // single source of truth
+    var markdown = this.state.markdown;
+    markdown = markdown.substr(0, start) + '**' + text + "**" + markdown.substr(end);
+    this.setState({ markdown: markdown });
   }
 }
 
