@@ -10,9 +10,19 @@ class Markdown extends React.Component {
       markdown: ''
     };
     this.ref = React.createRef();
+    console.log('ctor');
+  }
+
+  componentDidMount() {
+    console.log('mount');
+    var content = window.localStorage.getItem('markdownContent');
+    if (content) {
+      this.setState({ markdown: content });
+    }
   }
 
   render() {
+    console.log('render');
     var markdown = this.state.markdown;
     var html = marked(markdown);
 
@@ -36,7 +46,7 @@ class Markdown extends React.Component {
   }
 
   onChange(e) {
-    this.setState({ markdown: e.target.value });
+    this.setValue(e.target.value);
   }
 
   onBold() {
@@ -53,7 +63,13 @@ class Markdown extends React.Component {
     // single source of truth
     var markdown = this.state.markdown;
     markdown = markdown.substr(0, start) + '**' + text + "**" + markdown.substr(end);
+    this.setValue(markdown);
+  }
+
+
+  setValue(markdown) {
     this.setState({ markdown: markdown });
+    window.localStorage.setItem('markdownContent', markdown);
   }
 }
 
