@@ -50,7 +50,6 @@ class Markdown extends React.Component {
     // var event = new Event('change', { bubbles: true });
     // el.dispatchEvent(event);
 
-    // 真理的单源性
     // single source of truth
     var markdown = this.state.markdown;
     markdown = markdown.substr(0, start) + '**' + text + "**" + markdown.substr(end);
