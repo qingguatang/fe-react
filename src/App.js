@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import SortList from 'pages/SortList';
 import MyTabs from 'pages/MyTabs';
 import Forms from 'pages/Forms';
