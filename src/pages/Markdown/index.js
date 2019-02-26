@@ -1,7 +1,9 @@
 import React from 'react'
 import marked from 'marked';
 import 'bulma/css/bulma.min.css';
+import 'github-markdown-css';
 import './style.scss';
+
 
 class Markdown extends React.Component {
   constructor(props) {
@@ -38,12 +40,13 @@ class Markdown extends React.Component {
           <div className="editor">
             <textarea ref={this.ref} className="textarea" value={markdown} onChange={e => this.onChange(e)} />
           </div>
-          <div className="preview" dangerouslySetInnerHTML={{__html: html}}>
+          <div className="preview markdown-body" dangerouslySetInnerHTML={{__html: html}}>
           </div>
         </div>
       </div>
     );
   }
+
 
   onChange(e) {
     this.setValue(e.target.value);

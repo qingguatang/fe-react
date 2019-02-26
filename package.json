@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.2.1",
     "bulma": "^0.7.2",
+    "github-markdown-css": "^3.0.1",
     "marked": "^0.6.0",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",

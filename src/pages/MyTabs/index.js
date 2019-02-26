@@ -16,7 +16,7 @@ class MyTab extends React.Component {
       { title: 'Item C', body: 'Body C' }
     ];
     return (
-      <div className="tabs">
+      <div className="my-tabs">
         <ul className="navs">
         {
           items.map((item, index) => (
